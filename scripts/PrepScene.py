@@ -121,7 +121,7 @@ def PrepScene():
     bpy.ops.object.constraint_add(type='COPY_LOCATION')
     bpy.context.object.constraints["Copy Location"].target = armature
     bpy.context.object.constraints["Copy Location"].subtarget = 'Hips'
-    bpy.context.object.constraints["Copy Location"].use_offset = True  # Set use_offset to True
+    bpy.context.object.constraints["Copy Location"].use_offset = False  # Set use_offset to True
 
     # Bake the animation
     # Check if the file exists and remove it

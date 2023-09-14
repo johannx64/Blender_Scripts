@@ -78,6 +78,8 @@ def CleanAnim():
     path = bpy.data.filepath
     directory = os.path.dirname(path)
     blend_export_path = os.path.join(directory, f"{new_scene_name}.blend")
+    if os.path.exists(blend_export_path):
+        os.remove(blend_export_path)
     bpy.ops.wm.save_as_mainfile(filepath=blend_export_path)
 
 
@@ -85,6 +87,8 @@ def CleanAnim():
 
     # Export the FBX file with the same name as the scene plus "_char"
     fbx_export_path = os.path.join(directory, f"{new_scene_name}.fbx")
+    if os.path.exists(fbx_export_path):
+        os.remove(fbx_export_path)
     bpy.ops.export_scene.fbx(filepath=fbx_export_path, use_selection=False)
 
     # Report the export path
